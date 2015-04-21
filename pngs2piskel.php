@@ -30,9 +30,8 @@
 	$piskel["name"]="foobar";
 	$piskel["description"]="converted by pngs2piskel";
 	$piskel["fps"]=12;
-	$piskel["height"]=$size[0]/$cnt;
-	$piskel["width"]=$size[1];
-	$piskel["width"]=$size[1];
+	$piskel["width"]=$size[0]/$cnt;
+	$piskel["height"]=$size[1];
 	$piskel["layers"]=$layers;
 
 	$top = array();
