@@ -2,7 +2,7 @@
 	if ($argc<2)
 	{
 		echo "piskel-converter: combine number of pngs files into one piskel file (https://github.com/rostok/piskel-converter)\n\n";
-		echo "not enough arguments! correct syntax: \n\n\tpngs2piskel.php frame_number layer_1.png layer_2.png ...\n\n";
+		echo "usage: pngs2piskel.php frame_number layer_1.png layer_2.png ...\n\n";
 		die();
 	}
 
@@ -20,7 +20,7 @@
 	for ($i=2; $i<$argc; $i++)
 	{
 	 	$layer = array();
-	 	$layer["name"] = $argv[$i];
+	 	$layer["name"] = basename($argv[$i], ".png");
 	 	$layer["frameCount"] = $cnt;
 	 	$layer["base64PNG"] = "data:image/png;base64,".base64_encode(file_get_contents($argv[$i]));
 	 	$layers[] = json_encode($layer);
